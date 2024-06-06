@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Vina+Sans&display=swap"
+        rel="stylesheet">
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const stars = document.querySelectorAll('.rating input');
+                const ratingKey = 'userStarRating';
+    
+                // Function to save rating to local storage
+                function saveRating(rating) {
+                    localStorage.setItem(ratingKey, rating);
+                }
+    
+                // Function to load rating from local storage
+                function loadRating() {
+                    const savedRating = localStorage.getItem(ratingKey);
+                    if (savedRating) {
+                        document.getElementById(savedRating).checked = true;
+                    }
+                }
+    
+                // Add click event listener to each star
+                stars.forEach(star => {
+                    star.addEventListener('change', function() {
+                        saveRating(this.id);
+                    });
+                });
+    
+                // Load saved rating on page load
+                loadRating();
+            });
+        </script>
+</head>
+
+<body>
+    <div class="container">
+        <a class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+            aria-controls="offcanvasExample">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+            </svg>
+
+        </a>
+
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu (for those who are lost)</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div>
+                    Do you not know where to go? <br>
+                    Below is a list of items you can check out
+                </div>
+                <br><br>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-house" viewBox="0 0 16 16">
+                            <path
+                                d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+                        </svg>
+                        <a href="Home.html"
+                            style="text-decoration: none; color: black; font-weight: bold; padding: 10px;">Home</a>
+                        <p>Main homepage, where you can get short description about every items in the website.</p>
+                    </li>
+
+                    <li class="list-group-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-info-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                            <path
+                                d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                        </svg>
+                        <a href="Aboutme.html"
+                            style="text-decoration: none; color: black; font-weight: bold; padding: 10px;">About
+                            me</a>
+                        <p>Introduction about myself, hobby, contact and rewards i received. </p>
+                    </li>
+                    <li class="list-group-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-images" viewBox="0 0 16 16">
+                            <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
+                            <path
+                                d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2M14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1M2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10" />
+                        </svg>
+                        <a href="Draws.html"
+                            style="text-decoration: none; color: black; font-weight: bold; padding: 10px;">Draws</a>
+                        <p>Some projects of art and sketches that I've created with description about it.</p>
+                    </li>
+
+                    <li class="list-group-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-people" viewBox="0 0 16 16">
+                            <path
+                                d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4" />
+                        </svg>
+                        <a href="Fandom.html"
+                            style="text-decoration: none; color: black; font-weight: bold; padding: 10px;">Fandom</a>
+                        <p>Talk about Anime/Manga that I like.</p>
+                    </li>
+
+                    <li class="list-group-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-bag-dash" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M5.5 10a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5" />
+                            <path
+                                d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+                        </svg>
+                        <a href="Donate.html"
+                            style="text-decoration: none; color: black; font-weight: bold; padding: 10px;">Commissions</a>
+                        <p>Order arts made by me according to your wishes.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <header
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <div class="col-md-3 mb-2 mb-md-0">
+                <a href="./Home.html" class="d-inline-flex link-body-emphasis text-decoration-none">
+                    <img src="./image/icon.png" alt="icon" height="55px" width="90px">
+                    <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+            </div>
+
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 main-header">
+                <li><a href="./Home.html" class="nav-link px-2" style="color: palevioletred;">Home</a></li>
+                <li><a href="./Aboutme.html" class="nav-link px-2" style="color: palevioletred;">About me</a></li>
+                <li><a href="./Draws.html" class="nav-link px-2" style="color: palevioletred;">Draws</a></li>
+                <li><a href="./Fandom.html" class="nav-link px-2" style="color: palevioletred;">Fandom</a></li>
+                <li><a href="./Donate.html" class="nav-link px-2" style="color: palevioletred;">Commissions</a>
+                </li>
+            </ul>
+            <a href="./login/login.html">
+                <button class="Btn">
+                    <div class="sign"><svg viewBox="0 0 512 512">
+                            <path
+                                d="M217.9 105.9L340.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L217.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1L32 320c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM352 416l64 0c17.7 0 32-14.3 32-32l0-256c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c53 0 96 43 96 96l0 256c0 53-43 96-96 96l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z">
+                            </path>
+                        </svg></div>
+
+                    <div class="text" style="text-decoration: none; color: white; font-size: 15px;">Login</div>
+                </button>
+            </a>
+
+        </header>
+    </div>
+
+    <br>
+    <div class="container">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+            aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="./Home.html" class="link">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="Aboutme.html" class="link">About me</a>
+                </li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="container">
+        <h1>Let's know a little bit about me!</h1>
+        <br>
+        <div class="content-intro">
+            <div class="my-img">
+                <img src="./image/sfi.png" alt="Ảnh">
+                <i>One of my pictures</i>
+            </div>
+
+            <div class="text-intro">
+                <h2>Introduce</h2>
+                <p>Hello! My name is Ha Phuong, you can call me Haka or Ka, whichever
+                    you like! Let's talk a little bit about myself...
+
+                    Haka is a short girl, standing at roughly 157 cm tall with choppy black hair and large,
+                    amber
+                    irises that resemble crescent moons.
+
+                    Haka wears the old Kamome Academy female uniform, a black gakuran with gold buttons, white-collar
+                    and
+                    red hems, a white, long-sleeved western shirt underneath, black shoes, and red socks. He also wears
+                    a
+                    black hat that has a white underside, a gold emblem, and red strings along the front seam to match
+                    his
+                    uniform. Haka is often seen with and commands two hakujoudai—mysterious white fire-like orbs— with
+                    red
+                    and green circular cores respectively. On his left cheek, Haka wears a white seal with a
+                    red-colored
+                    kanji for written. <br><br>
+
+                    Occasionally, Haka is seen wearing a long, flowing black cape that covers his shoulders and chest
+                    and
+                    matches his usual outfit. The cape has a gold and red collar with clasps and a red underside. His
+                    cloak
+                    also neutralizes spiritual lightning.
+                    <br><br>
+                    Human Appearance
+                    As a human, Haka was seen wearing the old Kamome Academy school summer uniform: a white
+                    short-sleeved
+                    western shirt with black pants, a belt, and white shoes. He was often covered in bruises and
+                    bandages.
+                    There used to be a cotton gauze on his left cheek, similar to where his seal would be.
+                    <br><br>
+                </p>
+
+            </div>
+        </div>
+        <div class="text-intro2">
+            <div class="intro-card">
+                <p> Festival Appearance
+                    Haka's appearance as a young boy was perceived to be of grade-school age with little differences
+                    from
+                    his current form. He wore the casual festival attire of a dark yukata, ranging from dark teal to
+                    blue.
+                    There are cloud and moon designs imprinted on the fabric as well. His dragon-like mask is worn on
+                    the
+                    side of his head, and it is a teal-green color. In addition, he carried a purse strung around his
+                    neck
+                    and wore a pair of open-toed sandals.
+                    <br><br>
+                    Picture Perfect Arc
+                    During the Picture Perfect Arc, Haka wore the current Kamome Academy high school uniform, which
+                    consisted of the usual teal, short-sleeved shirt with brown stripes on the sleeves, and a
+                    cream-and-brown striped tie, plus black pants and blue-and-white shoes.
+                </p>
+                <div class="card22">
+                    <svg xml:space="preserve" style="enable-background: new 0 0 16 16" viewBox="0 0 16 16" y="0px"
+                        x="0px" id="Layer_1_1_" version="1.1" class="img22">
+                        <path d="M12,9H8H4c-2.209,0-4,1.791-4,4v3h16v-3C16,10.791,14.209,9,12,9z"></path>
+                        <path d="M12,5V4c0-2.209-1.791-4-4-4S4,1.791,4,4v1c0,2.209,1.791,4,4,4S12,7.209,12,5z"></path>
+                    </svg>
+
+                    <div class="text22">
+                        <span class="heading22">Haka</span>
+                        <p class="info22">QT's Student</p>
+                        <div class="country22">
+                            <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#f2e5d7"
+                                fill="none" viewBox="0 0 24 24" class="svg-country22">
+                                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+                                <line y2="15" x2="4" y1="22" x1="4"></line>
+                            </svg>
+                            <span>Ha Noi, VN</span>
+                        </div>
+                    </div>
+                    <ul class="soc22">
+                        <a href="https://facebook.com/hakanee39" class="li-soc22">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" height="32"
+                                    width="32">
+                                    <path fill="#f2e5d7"
+                                        d="M24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0ZM26.5016 25.0542V38.1115H21.0991V25.0547H18.4V20.5551H21.0991V17.8536C21.0991 14.1828 22.6231 12 26.9532 12H30.5581V16.5001H28.3048C26.6192 16.5001 26.5077 17.1289 26.5077 18.3025L26.5016 20.5546H30.5836L30.1059 25.0542H26.5016Z"
+                                        clip-rule="evenodd" fill-rule="evenodd"></path>
+                                </svg>
+                            </li>
+                        </a>
+                        <a href="https://twitter.com/hakauwu" class="li-soc22">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" height="32"
+                                    width="32">
+                                    <path fill="#f2e5d7"
+                                        d="M24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0ZM23.3316 20.338L23.2812 19.5075C23.1301 17.3551 24.4563 15.3891 26.5548 14.6265C27.327 14.3553 28.6364 14.3214 29.4926 14.5587C29.8283 14.6604 30.4663 14.9993 30.9195 15.3044L31.7421 15.8637L32.6486 15.5756C33.1523 15.423 33.8238 15.1688 34.1259 14.9993C34.4113 14.8468 34.6631 14.762 34.6631 14.8129C34.6631 15.101 34.042 16.084 33.5216 16.6263C32.8165 17.389 33.018 17.4568 34.4449 16.9483C35.3011 16.6602 35.3178 16.6602 35.15 16.9822C35.0492 17.1517 34.5288 17.7449 33.9748 18.2872C33.0347 19.2194 32.9844 19.3211 32.9844 20.1007C32.9844 21.304 32.4136 23.8123 31.8428 25.1851C30.7852 27.7612 28.5189 30.422 26.2526 31.7609C23.063 33.6422 18.8157 34.1167 15.24 33.0151C14.0481 32.6422 12 31.6931 12 31.5237C12 31.4728 12.6211 31.405 13.3766 31.3881C14.9546 31.3542 16.5326 30.9135 17.8756 30.1339L18.7822 29.5916L17.7413 29.2357C16.264 28.7272 14.9378 27.5578 14.6021 26.4562C14.5013 26.1003 14.5349 26.0833 15.475 26.0833L16.4487 26.0664L15.6261 25.6766C14.6524 25.1851 13.7627 24.3546 13.3262 23.5072C13.0072 22.8971 12.6044 21.3548 12.7219 21.2362C12.7554 21.1854 13.108 21.287 13.5109 21.4226C14.6692 21.8463 14.8203 21.7446 14.1488 21.0328C12.8897 19.7448 12.5036 17.8296 13.108 16.0162L13.3934 15.2027L14.5013 16.3043C16.7677 18.5245 19.4369 19.8465 22.4922 20.2363L23.3316 20.338Z"
+                                        clip-rule="evenodd" fill-rule="evenodd"></path>
+                                </svg>
+                            </li>
+                        </a>
+                        <a href="https://instagram.com/hakaaniii" class="li-soc22">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" height="32"
+                                    width="32">
+                                    <path fill="#f2e5d7"
+                                        d="M24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0ZM18.7233 11.2773C20.0886 11.2152 20.5249 11.2 24.0012 11.2H23.9972C27.4746 11.2 27.9092 11.2152 29.2746 11.2773C30.6373 11.3397 31.5679 11.5555 32.384 11.872C33.2266 12.1987 33.9386 12.636 34.6506 13.348C35.3627 14.0595 35.8 14.7736 36.128 15.6155C36.4427 16.4294 36.6587 17.3595 36.7227 18.7222C36.784 20.0876 36.8 20.5238 36.8 24.0001C36.8 27.4764 36.784 27.9116 36.7227 29.277C36.6587 30.6391 36.4427 31.5695 36.128 32.3837C35.8 33.2253 35.3627 33.9394 34.6506 34.6509C33.9394 35.3629 33.2264 35.8013 32.3848 36.1283C31.5703 36.4448 30.6391 36.6605 29.2765 36.7229C27.9111 36.7851 27.4762 36.8003 23.9996 36.8003C20.5236 36.8003 20.0876 36.7851 18.7222 36.7229C17.3598 36.6605 16.4294 36.4448 15.615 36.1283C14.7736 35.8013 14.0595 35.3629 13.3483 34.6509C12.6365 33.9394 12.1992 33.2253 11.872 32.3834C11.5557 31.5695 11.34 30.6394 11.2773 29.2767C11.2155 27.9114 11.2 27.4764 11.2 24.0001C11.2 20.5238 11.216 20.0873 11.2771 18.7219C11.3384 17.3598 11.5544 16.4294 11.8717 15.6152C12.1997 14.7736 12.6371 14.0595 13.3491 13.348C14.0606 12.6363 14.7747 12.1989 15.6166 11.872C16.4305 11.5555 17.3606 11.3397 18.7233 11.2773Z"
+                                        clip-rule="evenodd" fill-rule="evenodd"></path>
+                                    <path fill="#f2e5d7"
+                                        d="M22.853 13.5067C23.0759 13.5064 23.3158 13.5065 23.5746 13.5066L24.0013 13.5067C27.4189 13.5067 27.824 13.519 29.1736 13.5803C30.4216 13.6374 31.0989 13.8459 31.5501 14.0211C32.1475 14.2531 32.5733 14.5305 33.0211 14.9785C33.4691 15.4265 33.7464 15.8532 33.979 16.4505C34.1542 16.9012 34.363 17.5785 34.4198 18.8265C34.4811 20.1759 34.4944 20.5812 34.4944 23.9972C34.4944 27.4133 34.4811 27.8186 34.4198 29.168C34.3627 30.416 34.1542 31.0933 33.979 31.544C33.747 32.1413 33.4691 32.5667 33.0211 33.0144C32.5731 33.4624 32.1477 33.7398 31.5501 33.9718C31.0995 34.1478 30.4216 34.3558 29.1736 34.4128C27.8242 34.4742 27.4189 34.4875 24.0013 34.4875C20.5834 34.4875 20.1783 34.4742 18.8289 34.4128C17.5809 34.3552 16.9036 34.1467 16.4521 33.9715C15.8548 33.7395 15.4281 33.4621 14.9801 33.0141C14.5321 32.5661 14.2548 32.1405 14.0222 31.5429C13.847 31.0923 13.6382 30.4149 13.5814 29.1669C13.5201 27.8176 13.5078 27.4122 13.5078 23.994C13.5078 20.5759 13.5201 20.1727 13.5814 18.8233C13.6385 17.5753 13.847 16.898 14.0222 16.4468C14.2542 15.8494 14.5321 15.4228 14.9801 14.9748C15.4281 14.5268 15.8548 14.2494 16.4521 14.0169C16.9033 13.8409 17.5809 13.6329 18.8289 13.5755C20.0097 13.5222 20.4674 13.5062 22.853 13.5035V13.5067ZM30.8339 15.6321C29.9859 15.6321 29.2978 16.3193 29.2978 17.1676C29.2978 18.0156 29.9859 18.7036 30.8339 18.7036C31.6819 18.7036 32.3699 18.0156 32.3699 17.1676C32.3699 16.3196 31.6819 15.6316 30.8339 15.6316V15.6321ZM17.4279 24.0002C17.4279 20.3701 20.3709 17.4269 24.001 17.4268C27.6312 17.4268 30.5736 20.37 30.5736 24.0002C30.5736 27.6304 27.6314 30.5723 24.0013 30.5723C20.3711 30.5723 17.4279 27.6304 17.4279 24.0002Z"
+                                        clip-rule="evenodd" fill-rule="evenodd"></path>
+                                    <path fill="#f2e5d7"
+                                        d="M24.0012 19.7334C26.3575 19.7334 28.2679 21.6436 28.2679 24.0001C28.2679 26.3564 26.3575 28.2668 24.0012 28.2668C21.6447 28.2668 19.7345 26.3564 19.7345 24.0001C19.7345 21.6436 21.6447 19.7334 24.0012 19.7334Z">
+                                    </path>
+                                </svg>
+                            </li>
+                        </a>
+
+                    </ul>
+                </div>
+            </div>
+            <img src="./image/frend.jpg" alt="img" class="my-img2">
+            <i>Picture of me and my friends</i>
+        </div>
+
+        <div class="text-intro3">
+            <div>
+                <p>
+                    Being the seventh school mystery and the leader of the Seven Mysteries, Haka maintains the balance
+                    in
+                    the relationship between humans and supernaturals of the school, and is often seen helping others
+                    around
+                    and protecting the school. Haka is cheerful, outgoing, and likes having fun. As a ghost, he is
+                    rather
+                    mischievous, then he enjoys teasing others and can be very playful and pranky. Despite his youthful
+                    persona, Yako and Tsuchigomori respect him and follow his orders as fellow school mysteries. He can
+                    become very serious at times, but at other times he appears very flippant. Haka is also a bit
+                    sadistic
+                    at times, as shown when he happily threatened to turn Yako into fox udon (he often threatens others
+                    with
+                    his kitchen knife). Yashiro Nene describes him as someone who is difficult to understand.
+                    <br><br>
+                    Haka's personality is similar to that of when he was human, except for the fact that he was very
+                    passionate and knowledgeable about astronomy and dreamed of being an astronaut. However, he no
+                    longer
+                    talks about the subject. Furthermore, when he was alive at least in the school, he seemed more
+                    closed
+                    and shy. He doesn't like talking about or being reminded of his past due to the negative
+                    associations.
+                    <br><br>
+                    When upset, Haka tends to find isolated locations such as the rooftop. In the presence of others, he
+                    often smiles to mask negative emotions. Though he tends to smile at inappropriate times, seeming not
+                    caring about what is happening around him, his actions prove otherwise. He rarely talks about
+                    himself
+                    and it is hinted that this is because he fears of revealing his past to others. This self-isolation
+                    and
+                    bottling of his emotions leads to his tendency to make decisions without consulting others. Haka
+                    rarely asks for advice or help when it comes to solving problems, and as such he can be rather
+                    callous.
+                    He often assumes he has the best answer to a problem and will go through with his solution even if
+                    it
+                    may come at a very high cost to either himself or the person he is attempting to help. He will even
+                    lie
+                    to further his goals, which makes him seem rather duplicitous at times.
+                    <br><br>
+
+                </p>
+
+                <div>
+                    <div class="rating">
+                        <input type="radio" id="star-1" name="star-radio" value="star-1">
+                        <label for="star-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path pathLength="360"
+                                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z">
+                                </path>
+                            </svg>
+                        </label>
+                        <input type="radio" id="star-2" name="star-radio" value="star-1">
+                        <label for="star-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path pathLength="360"
+                                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z">
+                                </path>
+                            </svg>
+                        </label>
+                        <input type="radio" id="star-3" name="star-radio" value="star-1">
+                        <label for="star-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path pathLength="360"
+                                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z">
+                                </path>
+                            </svg>
+                        </label>
+                        <input type="radio" id="star-4" name="star-radio" value="star-1">
+                        <label for="star-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path pathLength="360"
+                                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z">
+                                </path>
+                            </svg>
+                        </label>
+                        <input type="radio" id="star-5" name="star-radio" value="star-1">
+                        <label for="star-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path pathLength="360"
+                                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z">
+                                </path>
+                            </svg>
+                        </label>
+    
+    
+                    </div>
+                    <!-- <button class="full-rounded button1">
+                        <span>Hover me</span>
+                        <div class="border full-rounded"></div>
+                    </button> -->
+                </div>
+
+            </div>
+
+            <div class="chuyeulatext">
+                <img src="./image/cert.jpg" alt="" class="my-img3">
+                <i>One of my certificates <br>
+                    Received in 2014&2019</i>
+                <img src="./image/bia.png" alt="" class="my-img3">
+                <i>My first complete project <br>
+                    Printed in 2023</i>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <footer class="pt-4 my-md-5 pt-md-5 border-top">
+                <div class="row">
+                    <div class="col-12 col-md">
+                        <img class="mb-2" src="./image/icon.png" alt="" width="28" height="19">
+                        <small class="d-block mb-3 text-body-secondary">©2023</small>
+                    </div>
+
+                    <div class="col-6 col-md">
+                        <h5>Resources</h5>
+                        <ul class="list-unstyled text-small">
+                            <li class="mb-1"><a class="link-secondary text-decoration-none"
+                                    href="https://getbootstrap.com">Bootstrap</a></li>
+                            <li class="mb-1"><a class="link-secondary text-decoration-none"
+                                    href="https://uiverse.io">UIverse</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-md">
+                        <h5>Payment support</h5>
+                        <ul class="list-unstyled text-small image-dona">
+                            <li class="mb-1"><img
+                                    src="https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8"
+                                    alt="Visa"></li>
+                            <li class="mb-1"><img
+                                    src="https://down-vn.img.susercontent.com/file/a0a9062ebe19b45c1ae0506f16af5c16"
+                                    alt="Mastercard"></li>
+                            <li class="mb-1"><img
+                                    src="https://down-vn.img.susercontent.com/file/38fd98e55806c3b2e4535c4e4a6c4c08"
+                                    alt="JBC"></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-md">
+                        <h5>About</h5>
+                        <ul class="list-unstyled text-small">
+                            <li class="mb-1"><a class="link-secondary text-decoration-none"
+                                    href="Aboutme.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script>
+
+        </script>
+</body>
+
+</html>

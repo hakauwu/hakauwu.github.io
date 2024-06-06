@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checking</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Vina+Sans&display=swap"
+    rel="stylesheet">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            emailjs.init("4FBr3v7fty65ZyA57"); // Replace with your public API key from EmailJS
+
+            const form = document.getElementById("contact-form");
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+                if (form.checkValidity()) {
+                    emailjs.send("service_d9jtd2o", "template_zqocb11", {
+                        pack: document.getElementById("chosen-pack").innerText,
+                        firstName: document.getElementById("firstName").value,
+                        lastName: document.getElementById("lastName").value,
+                        email: document.getElementById("email").value,
+                        phone: document.getElementById("phone").value,
+                        requests: document.getElementById("requests").value
+                    }).then(function(response) {
+                        alert("Email sent successfully! Returning to Home...");
+                        window.location.href = "Home.html";
+                    }, function(error) {
+                        alert("Failed to send email. Please try again later.");
+                    });
+                } else {
+                    form.classList.add("was-validated");
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+  <div class="container">
+    <a class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+      </svg>
+
+    </a>
+
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu (for those who are lost)</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          Do you not know where to go? <br>
+          Below is a list of items you can check out
+        </div>
+        <br><br>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-house" viewBox="0 0 16 16">
+                  <path
+                      d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+              </svg>
+              <a href="Home.html"
+                  style="text-decoration: none; color: black; font-weight: bold; padding: 10px;">Home</a>
+              <p>Main homepage, where you can get short description about every items in the website.</p>
+          </li>
+
+          <li class="list-group-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-info-circle" viewBox="0 0 16 16">
+                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                  <path
+                      d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+              </svg>
+              <a href="Aboutme.html"
+                  style="text-decoration: none; color: black; font-weight: bold; padding: 10px;">About
+                  me</a>
+              <p>Introduction about myself, hobby, contact and rewards i received. </p>
+          </li>
+          <li class="list-group-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-images" viewBox="0 0 16 16">
+                  <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
+                  <path
+                      d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2M14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1M2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10" />
+              </svg>
+              <a href="Draws.html"
+                  style="text-decoration: none; color: black; font-weight: bold; padding: 10px;">Draws</a>
+              <p>Some projects of art and sketches that I've created with description about it.</p>
+          </li>
+
+          <li class="list-group-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-people" viewBox="0 0 16 16">
+                  <path
+                      d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4" />
+              </svg>
+              <a href="Fandom.html"
+                  style="text-decoration: none; color: black; font-weight: bold; padding: 10px;">Fandom</a>
+              <p>Talk about Anime/Manga that I like.</p>
+          </li>
+
+          <li class="list-group-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-bag-dash" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                      d="M5.5 10a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5" />
+                  <path
+                      d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+              </svg>
+              <a href="Donate.html"
+                  style="text-decoration: none; color: black; font-weight: bold; padding: 10px;">Commissions</a>
+              <p>Order arts made by me according to your wishes.</p>
+          </li>
+      </ul>
+      </div>
+    </div>
+
+    <div class="container">
+      <header
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+          <a href="./Home.html" class="d-inline-flex link-body-emphasis text-decoration-none">
+            <img src="./image/icon.png" alt="icon" height="55px" width="90px">
+            <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+          </a>
+        </div>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 main-header">
+          <li><a href="./Home.html" class="nav-link px-2" style="color: palevioletred;">Home</a></li>
+          <li><a href="./Aboutme.html" class="nav-link px-2" style="color: palevioletred;">About me</a></li>
+          <li><a href="./Draws.html" class="nav-link px-2" style="color: palevioletred;">Draws</a></li>
+          <li><a href="./Fandom.html" class="nav-link px-2" style="color: palevioletred;">Fandom</a></li>
+          <li><a href="./Donate.html" class="nav-link px-2" style="color: palevioletred;">Commissions</a>
+          </li>
+        </ul>
+        <a href="./login/login.html">
+          <button class="Btn">
+              <div class="sign"><svg viewBox="0 0 512 512">
+                      <path
+                          d="M217.9 105.9L340.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L217.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1L32 320c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM352 416l64 0c17.7 0 32-14.3 32-32l0-256c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c53 0 96 43 96 96l0 256c0 53-43 96-96 96l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z">
+                      </path>
+                  </svg></div>
+
+              <div class="text" style="text-decoration: none; color: white; font-size: 15px;">Login</div>
+          </button>
+      </a>
+      </header>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <nav
+      style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+      aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="./Home.html" class="link">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="Donate.html" class="link">Commissions</a>
+        <li class="breadcrumb-item active" aria-current="page"><a href="" class="link">Checking</a>
+        </li>
+      </ol>
+    </nav>
+  </div>
+
+
+  <div class="container">
+    <main>
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="./image/icon.png" alt="icon" height="55px" width="90px">
+        <h2>Checkout form</h2>
+        <p class="lead">You are now on the order confirmation page.</p>
+      </div>
+
+      <div class="row g-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <h4 class="d-flex justify-content-between align-items-center mb-3" style="color: palevioletred;">
+            <span class="primary" style="color: palevioletred;">Your cart</span>
+            <span class="badge primary rounded-pill" style="background-color: palevioletred;">1</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 class="my-0" id="chosen-pack">Chibi (basic)</h6>
+                <small class="text-body-secondary">Please fill in the note to have the right one.</small>
+              </div>
+              <span class="text-body-secondary">$3</span>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total (USD)</span>
+              <strong>$3</strong>
+            </li>
+          </ul>
+
+        </div>
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Billing address</h4>
+          <form class="needs-validation" id="contact-form" novalidate>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label">First name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="email" class="form-label">Email <span class="text-body-secondary">(Required)</span></label>
+                <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                <div class="invalid-feedback">
+                  Please enter a valid email address.
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="number" class="form-label">Phone number <span class="text-body-secondary">(Required)</span></label>
+                <input type="tel" class="form-control" id="phone" placeholder=" Your phone number" required>
+                <div class="invalid-feedback">
+                  Please enter a valid phone number.
+                </div>
+              </div>
+              <hr class="my-4">
+              <h4>Your request</h4>
+              <textarea id="requests" name="message" cols="30" rows="10"
+                style="border: 1px gainsboro solid; border-radius: 30px; padding: 30px;"></textarea>
+              <a href="Home.html" style="color: white; text-decoration: none;">
+                <button class="w-100 btn btn-primary btn-lg" type="submit"
+                style="background-color: palevioletred; border: palevioletred;">Submit</button></a>
+          </form>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <div class="container">
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+            <div class="col-12 col-md">
+                <img class="mb-2" src="./image/icon.png" alt="" width="28" height="19">
+                <small class="d-block mb-3 text-body-secondary">©2023</small>
+            </div>
+
+            <div class="col-6 col-md">
+                <h5>Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://getbootstrap.com">Bootstrap</a></li>
+                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://uiverse.io">UIverse</a></li>
+                </ul>
+            </div>
+
+            <div class="col-6 col-md">
+                <h5>Payment support</h5>
+                <ul class="list-unstyled text-small image-dona">
+                    <li class="mb-1"><img
+                            src="https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8"
+                            alt="Visa"></li>
+                    <li class="mb-1"><img
+                            src="https://down-vn.img.susercontent.com/file/a0a9062ebe19b45c1ae0506f16af5c16"
+                            alt="Mastercard"></li>
+                    <li class="mb-1"><img
+                            src="https://down-vn.img.susercontent.com/file/38fd98e55806c3b2e4535c4e4a6c4c08"
+                            alt="JBC"></li>
+                </ul>
+            </div>
+
+            <div class="col-6 col-md">
+                <h5>About</h5>
+                <ul class="list-unstyled text-small">
+                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="Aboutme.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
+
+  <!-- <script src="main.js"></script> -->
+  <!-- <script>
+    document.getElementById('simpleForm')
+    addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+    const request = document.getElementById('requests').value;
+
+    const result = `
+        <h3>Submitted Data</h3>
+        <p><strong>First Name:</strong> ${firstName}</p>
+        <p><strong>Last Name:</strong> ${lastName}</p>
+        <p><strong>Phone Number:</strong> ${phone}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Request:</strong> ${request}</p>
+    `;
+    console.log(result)
+    document.getElementById('result').innerHTML = result;
+});
+
+  </script> -->
+</body>
+
+</html>
